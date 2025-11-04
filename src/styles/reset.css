@@ -1,0 +1,23 @@
+body {
+  font-family: var(--vwo-font-family);
+  font-weight: 400;
+  font-size: var(--vwo-font-size-base);
+  color: var(--vwo-text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--vwo-color-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--vwo-color-primary-light-3);
+  }
+
+  &:active {
+    color: var(--vwo-color-primary-dark-2);
+  }
+}

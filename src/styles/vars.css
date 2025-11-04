@@ -1,0 +1,107 @@
+:root {
+  /* 基础色板*/
+  --vwo-color-white: #ffffff;
+  --vwo-color-black: #000000;
+
+  /* 主色系 (Primary) */
+  --vwo-color-primary: #409eff;
+  --vwo-color-primary-light-3: #79bbff;
+  --vwo-color-primary-light-5: #a0cfff;
+  --vwo-color-primary-light-7: #c6e2ff;
+  --vwo-color-primary-light-8: #d9ecff;
+  --vwo-color-primary-light-9: #ecf5ff;
+  --vwo-color-primary-dark-2: #337ecc;
+
+  /* 成功色 (Success) */
+  --vwo-color-success: #67c23a;
+  --vwo-color-success-light-3: #95d475;
+  --vwo-color-success-light-5: #b3e19d;
+  --vwo-color-success-light-7: #d1edc4;
+  --vwo-color-success-light-8: #e1f3d8;
+  --vwo-color-success-light-9: #f0f9eb;
+  --vwo-color-success-dark-2: #529b2e;
+
+  /* 警告色 (warning) */
+  --vwo-color-warning: #e6a23c;
+  --vwo-color-warning-light-3: #eebe77;
+  --vwo-color-warning-light-5: #f3d19e;
+  --vwo-color-warning-light-7: #f8e3c5;
+  --vwo-color-warning-light-8: #faecd8;
+  --vwo-color-warning-light-9: #fdf6ec;
+  --vwo-color-warning-dark-2: #b88230;
+
+  /* 危险色 (danger) */
+  --vwo-color-danger: #f56c6c;
+  --vwo-color-danger-light-3: #f89898;
+  --vwo-color-danger-light-5: #fab6b6;
+  --vwo-color-danger-light-7: #fcd3d3;
+  --vwo-color-danger-light-8: #fde2e2;
+  --vwo-color-danger-light-9: #fef0f0;
+  --vwo-color-danger-dark-2: #c45656;
+
+  /* 信息色 (Info) */
+  --vwo-color-info: #909399;
+  --vwo-color-info-light-3: #b1b3b8;
+  --vwo-color-info-light-5: #c8c9cc;
+  --vwo-color-info-light-7: #dedfe0;
+  --vwo-color-info-light-8: #e9e9eb;
+  --vwo-color-info-light-9: #f4f4f5;
+  --vwo-color-info-dark-2: #73767a;
+
+  /* 背景色 */
+  --vwo-bg-color: #ffffff;
+  --vwo-bg-color-page: #f2f3f5;
+  --vwo-bg-color-overlay: #ffffff;
+
+  /* 文本色 */
+  --vwo-text-color-primary: #303133;
+  --vwo-text-color-regular: #606266;
+  --vwo-text-color-secondary: #909399;
+  --vwo-text-color-placeholder: #c0c4cc;
+  --vwo-text-color-disabled: #c0c4cc;
+
+  /* 边框色 */
+  --vwo-border-color: #dcdfe6;
+  --vwo-border-color-light: #e4e7ed;
+  --vwo-border-color-lighter: #ebeef5;
+  --vwo-border-color-extra-light: #f2f6fc;
+  --vwo-border-color-dark: #d4d7de;
+  --vwo-border-color-darerk: #cdd0d6;
+
+  /* 基础填充色 */
+  --vwo-fill-color: #f0f2f5;
+  --vwo-fill-color-light: #f5f7fa;
+  --vwo-fill-color-lighter: #fafafa;
+  --vwo-fill-color-extra-light: #ffffff;
+  --vwo-fill-color-dark: #e6e8eb;
+  --vwo-fill-color-darker: #dcdfe6;
+  --vwo-fill-color-blank: #ffffff;
+
+  /* border */
+  --vwo-border-width: 1px;
+  --vwo-border-style: solid;
+  --vwo-border-color-hover: var(--vwo-text-color-disabled);
+  --vwo-border: var(--vwo-border-width) var(--vwo-border-style) var(--vwo-border-color);
+
+  --vwo-border-radius-base: 4px;
+  --vwo-border-radius-small: 2px;
+  --vwo-border-radius-round: 20px;
+  --vwo-border-radius-circle: 100%;
+
+  /* font */
+  --vwo-font-size-extra-large: 20px;
+  --vwo-font-size-large: 18px;
+  --vwo-font-size-medium: 16px;
+  --vwo-font-size-base: 14px;
+  --vwo-font-size-small: 13px;
+  --vwo-font-size-extra-small: 12px;
+  --vwo-font-family:
+    'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial,
+    sans-serif;
+  --vwo-font-weight-primary: 500;
+
+  /* disabled */
+  --vwo-disabled-bg-color: var(--vwo-fill-color-light);
+  --vwo-disabled-text-color: var(--vwo-text-color-placeholder);
+  --vwo-disabled-border-color: var(--vwo-border-color-light);
+}
