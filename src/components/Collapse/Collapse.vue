@@ -5,8 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, provide } from 'vue';
 import type { NameType } from './types';
+import { collapseContextKey } from './types';
 
 defineOptions({
   name: 'VWoCollapse',
@@ -23,4 +24,9 @@ const handleItemClick = (item: NameType) => {
     activeNames.value.push(item);
   }
 };
+
+provide(collapseContextKey, {
+  activeNames,
+  handleItemClick,
+});
 </script>
