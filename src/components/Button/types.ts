@@ -1,7 +1,7 @@
-export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
-export type ButtonSize = 'small' | 'medium' | 'large'
+export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
+export type ButtonSize = 'small' | 'medium' | 'large';
 
-export type NativeType = 'button' | 'submit' | 'reset'
+export type NativeType = 'button' | 'submit' | 'reset';
 
 export interface ButtonProps {
   type?: ButtonType;
