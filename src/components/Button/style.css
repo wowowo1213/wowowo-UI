@@ -1,0 +1,242 @@
+.vwo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #dcdfe6;
+  color: #606266;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  font-weight: 500;
+  user-select: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.vwo-button:hover {
+  color: var(--vwo-color-primary);
+  border-color: #c6e2ff;
+  background-color: #ecf5ff;
+}
+
+.vwo-button:active {
+  color: var(--vwo-color-primary-dark-2);
+  border-color: var(--vwo-color-primary-dark-2);
+  outline: none;
+}
+
+/* 按钮类型 */
+.vwo-button--primary {
+  color: #fff;
+  background-color: var(--vwo-color-primary);
+  border-color: var(--vwo-color-primary);
+}
+
+.vwo-button--primary:hover {
+  background: var(--vwo-color-primary-light-3);
+  border-color: var(--vwo-color-primary-light-3);
+  color: #fff;
+}
+
+.vwo-button--primary.is-plain {
+  color: var(--vwo-color-primary);
+  background: #ecf5ff;
+  border-color: #b3d8ff;
+}
+
+.vwo-button--primary.is-plain:hover {
+  background: var(--vwo-color-primary);
+  border-color: var(--vwo-color-primary);
+  color: #fff;
+}
+
+.vwo-button--success {
+  color: #fff;
+  background-color: var(--vwo-color-success);
+  border-color: var(--vwo-color-success);
+}
+
+.vwo-button--success:hover {
+  background: var(--vwo-color-success-light-3);
+  border-color: var(--vwo-color-success-light-3);
+  color: #fff;
+}
+
+.vwo-button--success.is-plain {
+  color: var(--vwo-color-success);
+  background: #f0f9eb;
+  border-color: #c2e7b0;
+}
+
+.vwo-button--success.is-plain:hover {
+  background: var(--vwo-color-success);
+  border-color: var(--vwo-color-success);
+  color: #fff;
+}
+
+.vwo-button--warning {
+  color: #fff;
+  background-color: var(--vwo-color-warning);
+  border-color: var(--vwo-color-warning);
+}
+
+.vwo-button--warning:hover {
+  background: var(--vwo-color-warning-light-3);
+  border-color: var(--vwo-color-warning-light-3);
+  color: #fff;
+}
+
+.vwo-button--warning.is-plain {
+  color: var(--vwo-color-warning);
+  background: #fdf6ec;
+  border-color: #f5dab1;
+}
+
+.vwo-button--warning.is-plain:hover {
+  background: var(--vwo-color-warning);
+  border-color: var(--vwo-color-warning);
+  color: #fff;
+}
+
+.vwo-button--danger {
+  color: #fff;
+  background-color: var(--vwo-color-danger);
+  border-color: var(--vwo-color-danger);
+}
+
+.vwo-button--danger:hover {
+  background: var(--vwo-color-danger-light-3);
+  border-color: var(--vwo-color-danger-light-3);
+  color: #fff;
+}
+
+.vwo-button--danger.is-plain {
+  color: var(--vwo-color-danger);
+  background: #fef0f0;
+  border-color: #fbc4c4;
+}
+
+.vwo-button--danger.is-plain:hover {
+  background: var(--vwo-color-danger);
+  border-color: var(--vwo-color-danger);
+  color: #fff;
+}
+
+.vwo-button--info {
+  color: #fff;
+  background-color: var(--vwo-color-info);
+  border-color: var(--vwo-color-info);
+}
+
+.vwo-button--info:hover {
+  background: var(--vwo-color-info-light-3);
+  border-color: var(--vwo-color-info-light-3);
+  color: #fff;
+}
+
+.vwo-button--info.is-plain {
+  color: var(--vwo-color-info);
+  background: #f4f4f5;
+  border-color: #d3d4d6;
+}
+
+.vwo-button--info.is-plain:hover {
+  background: var(--vwo-color-info);
+  border-color: var(--vwo-color-info);
+  color: #fff;
+}
+
+/* 按钮尺寸 */
+.vwo-button--large {
+  padding: 15px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.vwo-button--medium {
+  padding: 12px 20px;
+  font-size: 14px;
+}
+
+.vwo-button--small {
+  padding: 9px 16px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+/* 圆角按钮 */
+.vwo-button.is-round {
+  border-radius: 20px;
+}
+
+/* 圆形按钮 */
+.vwo-button.is-circle {
+  border-radius: 50%;
+  padding: 12px;
+  width: 40px;
+  height: 40px;
+}
+
+.vwo-button.is-circle .vwo-button__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 禁用状态 */
+.vwo-button.is-disabled,
+.vwo-button.is-disabled:hover,
+.vwo-button.is-disabled:active {
+  color: #c0c4cc;
+  cursor: not-allowed;
+  background-image: none;
+  background-color: #fff;
+  border-color: #ebeef5;
+}
+
+.vwo-button--primary.is-disabled,
+.vwo-button--primary.is-disabled:hover,
+.vwo-button--primary.is-disabled:active {
+  color: #fff;
+  background-color: #a0cfff;
+  border-color: #a0cfff;
+}
+
+.vwo-button--success.is-disabled,
+.vwo-button--success.is-disabled:hover,
+.vwo-button--success.is-disabled:active {
+  color: #fff;
+  background-color: #b3e19d;
+  border-color: #b3e19d;
+}
+
+.vwo-button--warning.is-disabled,
+.vwo-button--warning.is-disabled:hover,
+.vwo-button--warning.is-disabled:active {
+  color: #fff;
+  background-color: #f3d19e;
+  border-color: #f3d19e;
+}
+
+.vwo-button--danger.is-disabled,
+.vwo-button--danger.is-disabled:hover,
+.vwo-button--danger.is-disabled:active {
+  color: #fff;
+  background-color: #fab6b6;
+  border-color: #fab6b6;
+}
+
+.vwo-button--info.is-disabled,
+.vwo-button--info.is-disabled:hover,
+.vwo-button--info.is-disabled:active {
+  color: #fff;
+  background-color: #c8c9cc;
+  border-color: #c8c9cc;
+}

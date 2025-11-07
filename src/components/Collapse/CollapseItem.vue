@@ -5,7 +5,15 @@
       'is-disabled': disabled,
     }"
   >
-    <div class="vwo-collapse-item__head" :id="`item-header-${name}`" @click="handleClick">
+    <div
+      class="vwo-collapse-item__head"
+      :class="{
+        'is-disabled': disabled,
+        'is-active': isActive,
+      }"
+      :id="`item-header-${name}`"
+      @click="handleClick"
+    >
       <slot name="title">
         {{ title }}
       </slot>

@@ -43,16 +43,19 @@
       </div>
     </div>
 
-    <Collapse>
+    <Collapse v-model="openedValue" accordion>
       <Item name="a">
         <template #title>
-          <h1>nice title</h1>
+          <h1>title A</h1>
         </template>
         <h1>headline title</h1>
         <div>this is content a aaa</div>
       </Item>
-      <Item name="b" title="nice title b item b">
+      <Item name="b" title="Title b">
         <div>this is bbbbb test</div>
+      </Item>
+      <Item name="c" title="Title c" disabled>
+        <div>this is ccccc test</div>
       </Item>
     </Collapse>
   </div>
@@ -67,10 +70,15 @@ import Collapse from './components/Collapse/Collapse.vue';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 
+const openedValue = ref(['a']);
+
 onMounted(() => {
   if (buttonRef.value) {
     console.log(buttonRef.value.ref);
   }
+  setTimeout(() => {
+    openedValue.value = ['a', 'b'];
+  }, 2000);
 });
 </script>
 
