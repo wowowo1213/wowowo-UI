@@ -9,9 +9,7 @@ import { ref, provide, watch } from 'vue';
 import type { NameType, CollapseProps, CollapseEmits } from './types';
 import { collapseContextKey } from './types';
 
-defineOptions({
-  name: 'VWoCollapse',
-});
+defineOptions({ name: 'VWoCollapse' });
 
 const props = defineProps<CollapseProps>();
 const emits = defineEmits<CollapseEmits>();
@@ -23,11 +21,12 @@ watch(
   () => props.modelValue,
   () => {
     activeNames.value = props.modelValue;
-  },
+  }
 );
 
 const handleItemClick = (item: NameType) => {
   if (props.accordion) {
+    // 手风琴模式下能激活的item只有一个
     activeNames.value = [activeNames.value[0] === item ? '' : item];
   } else {
     const index = activeNames.value.indexOf(item);

@@ -6,7 +6,7 @@
     }"
   >
     <div
-      class="vwo-collapse-item__head"
+      class="vwo-collapse-item__header"
       :class="{
         'is-disabled': disabled,
         'is-active': isActive,
@@ -14,6 +14,7 @@
       :id="`item-header-${name}`"
       @click="handleClick"
     >
+      <!-- 这边使用具名插槽 -->
       <slot name="title">
         {{ title }}
       </slot>
@@ -29,19 +30,13 @@ import { inject, computed } from 'vue';
 import type { CollapseItemProps } from './types';
 import { collapseContextKey } from './types';
 
-defineOptions({
-  name: 'VWoCollapseItem',
-});
+defineOptions({ name: 'VWoCollapseItem' });
 
 const props = defineProps<CollapseItemProps>();
 const collapseContext = inject(collapseContextKey);
-const isActive = computed(() => {
-  return collapseContext?.activeNames.value.includes(props.name);
-});
+const isActive = computed(() => collapseContext?.activeNames.value.includes(props.name));
 const handleClick = () => {
-  if (props.disabled) {
-    return;
-  }
+  if (props.disabled) return;
   collapseContext?.handleItemClick(props.name);
 };
 </script>

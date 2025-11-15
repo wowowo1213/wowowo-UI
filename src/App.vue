@@ -63,10 +63,10 @@
 
 <script lang="ts" setup name="App">
 import { ref, onMounted } from 'vue';
-import Button from './components/Button/Button.vue';
-import type { ButtonInstance } from './components/Button/types';
-import Item from './components/Collapse/CollapseItem.vue';
-import Collapse from './components/Collapse/Collapse.vue';
+import Button from '@/components/Button/Button.vue';
+import type { ButtonInstance } from '@/components/Button/types';
+import Item from '@/components/Collapse/CollapseItem.vue';
+import Collapse from '@/components/Collapse/Collapse.vue';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 
@@ -81,5 +81,3 @@ onMounted(() => {
   }, 2000);
 });
 </script>
-
-<style scoped></style>

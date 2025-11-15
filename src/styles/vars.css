@@ -104,4 +104,6 @@
   --vwo-disabled-bg-color: var(--vwo-fill-color-light);
   --vwo-disabled-text-color: var(--vwo-text-color-placeholder);
   --vwo-disabled-border-color: var(--vwo-border-color-light);
+
+  --vwo-transition-duration: 0.3s;
 }
