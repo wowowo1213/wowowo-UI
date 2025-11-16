@@ -19,9 +19,11 @@
         {{ title }}
       </slot>
     </div>
-    <div class="vwo-collapse-item__content" :id="`item-content-${name}`" v-show="isActive">
-      <slot></slot>
-    </div>
+    <Transition name="fade">
+      <div class="vwo-collapse-item__content" :id="`item-content-${name}`" v-show="isActive">
+        <slot></slot>
+      </div>
+    </Transition>
   </div>
 </template>
 
