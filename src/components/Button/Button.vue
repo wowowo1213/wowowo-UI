@@ -1,6 +1,6 @@
 <template>
   <button
-    ref="woRef"
+    ref="_ref"
     class="vwo-button"
     :class="{
       [`vwo-button--${type}`]: type,
@@ -11,17 +11,18 @@
       'is-disabled': disabled,
     }"
     :disabled="disabled"
-    :autofocus="autofocus"
     :type="nativeType"
+    :autofocus="autofocus"
   >
-    <slot></slot>
+    <span>
+      <slot />
+    </span>
   </button>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import type { ButtonProps } from './types';
-
 defineOptions({
   name: 'VWoButton',
 });
@@ -30,9 +31,9 @@ withDefaults(defineProps<ButtonProps>(), {
   nativeType: 'button',
 });
 
-const woRef = ref<HTMLButtonElement>();
+const _ref = ref<HTMLButtonElement>();
 
 defineExpose({
-  ref: woRef,
+  ref: _ref,
 });
 </script>

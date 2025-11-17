@@ -61,7 +61,7 @@
   </div>
 </template>
 
-<script lang="ts" setup name="App">
+<script setup lang="ts" name="App">
 import { ref, onMounted } from 'vue';
 import Button from '@/components/Button/Button.vue';
 import type { ButtonInstance } from '@/components/Button/types';

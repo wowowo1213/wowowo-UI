@@ -1,12 +1,13 @@
-# wowowo-UI
+# wowowo-UI - 基于 CSS 变量的 Vue 组件库
 
-一个基于 CSS 变量（参考 Element-UI 颜色和设计）的 Vue 组件库
+一个轻量级、可定制的 Vue 3 组件库，参考 Element-UI 设计风格，使用 CSS 变量实现主题统一管理。
 
 ## 特性
 
-- 使用 CSS 变量统一主题样式
-- 组件设计参考 Element-UI 的视觉风格
-- 支持手风琴模式的 `Collapse` 组件
+- **Element-UI 风格**：继承 Element-UI 的视觉设计语言
+- **CSS 变量主题**：通过 CSS 变量统一管理样式，轻松切换主题
+- **TypeScript 支持**：完整的类型定义，提升开发体验
+- **手风琴模式**：`Collapse` 组件支持手风琴效果
 
 ## 安装
 
@@ -14,13 +15,40 @@
 npm install wowowo-ui
 ```
 
-## 使用 CSS 变量
+## 🚀快速开始
 
-在项目中引入 `reset.css` 和主题变量
+### 1. 引入样式
 
-## 组件文档
+在项目中引入全局样式和 CSS 变量：
+
+```js
+// main.js 或者 main.ts
+import 'wowowo-ui/dist/styles/reset.css';
+import 'wowowo-ui/dist/styles/variables.css';
+```
+
+### 2、全局注册组件
+
+```js
+import { createApp } from 'vue';
+import WowowoUI from 'wowowo-ui';
+
+const app = createApp(App);
+app.use(WowowoUI);
+app.mount('#app');
+```
+
+### 3、按需引入
+
+```js
+<script setup>import {(Button, Collapse, CollapseItem)} from 'wowowo-ui';</script>
+```
+
+## 📚 组件文档
 
 ### 1. Button 组件
+
+#### 使用展示
 
 ```vue
 <template>
@@ -35,10 +63,15 @@ const handleClick = () => console.log('按钮点击');
 
 #### API
 
-| 属性 | 说明     | 类型                                                        | 默认值      |
-| ---- | -------- | ----------------------------------------------------------- | ----------- |
-| type | 按钮类型 | `'primary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'primary'` |
-| size | 按钮尺寸 | `'large' \| 'medium' \| 'small'`                            | `'medium'`  |
+| 属性     | 说明       | 类型                                                         | 默认值      |
+| -------- | ---------- | ------------------------------------------------------------ | ----------- |
+| type     | 按钮类型   | `'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'` | `'default'` |
+| size     | 按钮尺寸   | `'large' | 'medium' | 'small'`                               | `'medium'`  |
+| plain    | 朴素模式   | `boolean`                                                    | `false`     |
+| round    | 圆角按钮   | `boolean`                                                    | `false`     |
+| circle   | 圆形按钮   | `boolean`                                                    | `false`     |
+| disabled | 禁用状态   | `boolean`                                                    | `false`     |
+| loading  | 加载中状态 | `boolean`                                                    | `false`     |
 
 ---
 
@@ -48,7 +81,7 @@ const handleClick = () => console.log('按钮点击');
 
 点击标题可以关闭和展开内容
 
-特定的手风琴模式：点击一个内容标题，则会关闭另一个内容
+特定的手风琴模式：点击一个内容标题，则会关闭其他内容
 
 #### 使用展示
 
