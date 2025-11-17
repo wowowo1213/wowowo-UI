@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <Button type="primary" plain ref="buttonRef">Text Button</Button>
+      <Button plain ref="buttonRef">Text Button</Button>
 
       <div class="button-group">
         <h3>1. 默认按钮</h3>

@@ -6,6 +6,7 @@
 
 - **Element-UI 风格**：继承 Element-UI 的视觉设计语言
 - **CSS 变量主题**：通过 CSS 变量统一管理样式，轻松切换主题
+- **使用`PostCSS`作为CSS扩展**: 通过@each、@for、color-mix动态生成CSS变量，简化CSS代码
 - **TypeScript 支持**：完整的类型定义，提升开发体验
 - **手风琴模式**：`Collapse` 组件支持手风琴效果
 
@@ -55,23 +56,24 @@ app.mount('#app');
   <Button type="primary" @click="handleClick">主要按钮</Button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Button } from 'wowowo-ui';
 const handleClick = () => console.log('按钮点击');
 </script>
 ```
 
-#### API
+#### 属性
 
-| 属性     | 说明       | 类型                                                         | 默认值      |
-| -------- | ---------- | ------------------------------------------------------------ | ----------- |
-| type     | 按钮类型   | `'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'` | `'default'` |
-| size     | 按钮尺寸   | `'large' | 'medium' | 'small'`                               | `'medium'`  |
-| plain    | 朴素模式   | `boolean`                                                    | `false`     |
-| round    | 圆角按钮   | `boolean`                                                    | `false`     |
-| circle   | 圆形按钮   | `boolean`                                                    | `false`     |
-| disabled | 禁用状态   | `boolean`                                                    | `false`     |
-| loading  | 加载中状态 | `boolean`                                                    | `false`     |
+| 属性       | 说明         | 类型       | 默认值    |
+| ---------- | ------------ | ---------- | --------- | --------- | ---------- | ------- | ---- |
+| type       | 按钮类型     | `'primary' | 'success' | 'warning' | 'danger'   | 'info'` | `''` |
+| size       | 按钮尺寸     | `'large'   | 'medium'  | 'small'`  | `''`       |
+| plain      | 朴素模式     | `boolean`  | `false`   |
+| round      | 圆角按钮     | `boolean`  | `false`   |
+| circle     | 圆形按钮     | `boolean`  | `false`   |
+| disabled   | 禁用状态     | `boolean`  | `false`   |
+| nativeType | 原生按钮类型 | `'button'  | 'submit'  | 'reset'`  | `'button'` |
+| loading    | 加载中状态   | `boolean`  | `false`   |
 
 ---
 
@@ -104,7 +106,7 @@ const handleClick = () => console.log('按钮点击');
   </Collapse>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import { Collapse, CollapseItem } from 'wowowo-ui';
 
@@ -112,14 +114,14 @@ const openedValue = ref(['a']);
 </script>
 ```
 
-#### API
+#### 属性
 
 ##### Collapse Props
 
-| 属性                 | 说明                       | 类型      | 可选性 |
-| -------------------- | -------------------------- | --------- | ------ |
-| modelValue / v-model | 当前展开的面板 name        | `string`  | 必填   |
-| accordion            | 用来控制是否支持手风琴格式 | `boolean` | 选填   |
+| 属性      | 说明                       | 类型      | 可选性 |
+| --------- | -------------------------- | --------- | ------ |
+| v-model   | 当前展开的面板 name        | `string`  | 必填   |
+| accordion | 用来控制是否支持手风琴格式 | `boolean` | 选填   |
 
 ##### CollapseItem Props
 
