@@ -14,9 +14,8 @@
       :id="`item-header-${name}`"
       @click="handleClick"
     >
-      <slot name="title">
-        {{ title }}
-      </slot>
+      <slot name="title">{{ title }}</slot>
+      <Icon icon="angle-right" class="header-angle" />
     </div>
     <Transition name="slide" v-on="transitionEvents">
       <div class="vwo-collapse-item__wrapper" v-show="isActive">
@@ -32,6 +31,7 @@
 import { inject, computed } from 'vue';
 import type { CollapseItemProps } from './types';
 import { collapseContextKey } from './types';
+import Icon from '@/components/Icon/Icon.vue';
 defineOptions({ name: 'VWoCollapseItem' });
 
 const props = defineProps<CollapseItemProps>();

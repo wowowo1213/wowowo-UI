@@ -9,11 +9,14 @@
       'is-round': round,
       'is-circle': circle,
       'is-disabled': disabled,
+      'is-loading': loading,
     }"
-    :disabled="disabled"
+    :disabled="disabled || loading"
     :type="nativeType"
     :autofocus="autofocus"
   >
+    <Icon icon="spinner" spin v-if="loading" />
+    <Icon :icon="icon" v-if="icon" />
     <span>
       <slot />
     </span>
@@ -23,6 +26,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { ButtonProps } from './types';
+import Icon from '@/components/Icon/Icon.vue';
 defineOptions({
   name: 'VWoButton',
 });
@@ -33,7 +37,5 @@ withDefaults(defineProps<ButtonProps>(), {
 
 const _ref = ref<HTMLButtonElement>();
 
-defineExpose({
-  ref: _ref,
-});
+defineExpose({ ref: _ref });
 </script>

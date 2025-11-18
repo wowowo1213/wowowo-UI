@@ -41,6 +41,18 @@
         <Button type="primary" disabled>禁用按钮</Button>
         <Button plain disabled>禁用朴素按钮</Button>
       </div>
+
+      <div class="button-group">
+        <h3>7. loading状态</h3>
+        <Button type="primary" loading>加载按钮</Button>
+        <Button plain loading>加载朴素按钮</Button>
+      </div>
+
+      <div class="button-group">
+        <h3>8. 带有Icon</h3>
+        <Button type="primary" icon="home">home按钮</Button>
+        <Button type="primary" loading icon="spinner">spinner按钮</Button>
+      </div>
     </div>
 
     <Collapse v-model="openedValue" accordion>
@@ -58,6 +70,8 @@
         <div>this is ccccc test</div>
       </Item>
     </Collapse>
+
+    <Icon icon="spinner" type="primary" color="red"></Icon>
   </div>
 </template>
 
@@ -67,6 +81,7 @@ import Button from '@/components/Button/Button.vue';
 import type { ButtonInstance } from '@/components/Button/types';
 import Item from '@/components/Collapse/CollapseItem.vue';
 import Collapse from '@/components/Collapse/Collapse.vue';
+import Icon from '@/components/Icon/Icon.vue';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 

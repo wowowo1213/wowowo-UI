@@ -1,0 +1,16 @@
+.vwo-icon {
+  --vwo-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--vwo-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, success, warning, danger, info {
+  .vwo-icon--$(val) {
+    --vwo-icon-color: var(--vwo-color-$(val));
+  }
+}

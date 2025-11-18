@@ -78,6 +78,9 @@
     background-color: var(--vwo-button-disabled-bg-color);
     border-color: var(--vwo-button-disabled-border-color);
   }
+  [class*='vwo-icon'] + span {
+    margin-left: 6px;
+  }
 }
 @each $val in primary, success, warning, danger, info {
   .vwo-button--$(val) {

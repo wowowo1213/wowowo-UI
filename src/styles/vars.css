@@ -51,7 +51,8 @@
   --vwo-disabled-text-color: var(--vwo-text-color-placeholder);
   --vwo-disabled-border-color: var(--vwo-border-color-light);
 
-  --vwo-transition-duration: 0.2s;
+  --vwo-transition-duration: 0.3s;
+  --vwo-transition-durantion-fast: 0.2s;
 
   --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
   @each $val, $color in var(--colors) {
