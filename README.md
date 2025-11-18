@@ -25,7 +25,7 @@ npm install wowowo-ui
 ```js
 // main.js 或者 main.ts
 import 'wowowo-ui/dist/styles/reset.css';
-import 'wowowo-ui/dist/styles/variables.css';
+import 'wowowo-ui/dist/styles/var.css';
 ```
 
 ### 2、全局注册组件
@@ -64,16 +64,16 @@ const handleClick = () => console.log('按钮点击');
 
 #### 属性
 
-| 属性       | 说明         | 类型       | 默认值    |
-| ---------- | ------------ | ---------- | --------- | --------- | ---------- | ------- | ---- |
-| type       | 按钮类型     | `'primary' | 'success' | 'warning' | 'danger'   | 'info'` | `''` |
-| size       | 按钮尺寸     | `'large'   | 'medium'  | 'small'`  | `''`       |
-| plain      | 朴素模式     | `boolean`  | `false`   |
-| round      | 圆角按钮     | `boolean`  | `false`   |
-| circle     | 圆形按钮     | `boolean`  | `false`   |
-| disabled   | 禁用状态     | `boolean`  | `false`   |
-| nativeType | 原生按钮类型 | `'button'  | 'submit'  | 'reset'`  | `'button'` |
-| loading    | 加载中状态   | `boolean`  | `false`   |
+| 属性       | 说明         | 类型                                                          | 默认值     |
+| ---------- | ------------ | ------------------------------------------------------------- | ---------- |
+| type       | 按钮类型     | `'primary' \| 'success' \| 'warning' \| 'danger'   \| 'info'` | `''`       |
+| size       | 按钮尺寸     | `'large'   \| 'medium'  \| 'small'`                           | `''`       |
+| plain      | 朴素模式     | `boolean`                                                     | `false`    |
+| round      | 圆角按钮     | `boolean`                                                     | `false`    |
+| circle     | 圆形按钮     | `boolean`                                                     | `false`    |
+| disabled   | 禁用状态     | `boolean`                                                     | `false`    |
+| nativeType | 原生按钮类型 | `'button'  \| 'submit'  \| 'reset'`                           | `'button'` |
+| loading    | 加载中状态   | `boolean`                                                     | `false`    |
 
 ---
 
@@ -132,6 +132,44 @@ const openedValue = ref(['a']);
 | disabled | 是否可展开 | `boolean` | 选填   |
 
 ---
+
+### 3.Icon 组件
+
+#### 安装依赖
+
+```bash
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome
+```
+
+#### 使用展示
+
+```vue
+<template>
+  <Icon icon="spinner" type="primary" color="red"></Icon>
+</template>
+
+<script>
+import Icon from '@/components/Icon/Icon.vue';
+</script>
+```
+
+#### 属性
+
+`Icon` 组件支持以下属性：
+
+| 属性名    | 类型                                                                    | 默认值  | 说明                                                 |
+| --------- | ----------------------------------------------------------------------- | ------- | ---------------------------------------------------- |
+| `icon`    | `string \| object \| Array<string> \| IconDefinition`                   | -       | **必填**，指定图标（如 `"home"` 或 `faHome`）        |
+| `type`    | `'primary' \| 'success' \| 'warning' \| 'danger' \| 'info'`             | -       | 图标类型（用于样式）                                 |
+| `color`   | `string`                                                                | -       | 自定义图标颜色（如 `"red"` 或 `"#ff0000"`）          |
+| `size`    | `'2xs' \| 'xs' \| 'sm' \| 'lg' \| 'xl' \| '2xl' \| '1x' \| '2x' \| ...` | -       | 图标大小（Font Awesome 标准）                        |
+| `spin`    | `boolean`                                                               | `false` | 是否旋转动画                                         |
+| `pulse`   | `boolean`                                                               | `false` | 是否脉冲动画                                         |
+| `rotate`  | `90 \| 180 \| 270 \| '90' \| '180' \| '270'`                            | -       | 旋转角度                                             |
+| `flip`    | `'horizontal' \| 'vertical' \| 'both' \| boolean`                       | -       | 翻转图标                                             |
+| `border`  | `boolean`                                                               | `false` | 是否显示边框                                         |
+| `inverse` | `boolean`                                                               | `false` | 反色（深色背景适用）                                 |
+| `...`     | `...`                                                                   | `...`   | 其他 Font Awesome 原生属性（如 `mask`, `symbol` 等） |
 
 ## 开发指南
 
