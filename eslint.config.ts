@@ -1,28 +1,40 @@
-import { globalIgnores } from 'eslint/config'
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
-import pluginVue from 'eslint-plugin-vue'
-import pluginVitest from '@vitest/eslint-plugin'
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import pluginVue from 'eslint-plugin-vue';
+import json from '@eslint/json';
+import markdown from '@eslint/markdown';
+import css from '@eslint/css';
+import { defineConfig } from 'eslint/config';
 
-// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
-// import { configureVueProject } from '@vue/eslint-config-typescript'
-// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
-// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
-
-export default defineConfigWithVueTs(
+export default defineConfig([
   {
-    name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}'],
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
+    plugins: { js },
+    extends: ['js/recommended'],
+    languageOptions: { globals: globals.browser },
   },
-
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
-
+  tseslint.configs.recommended,
   pluginVue.configs['flat/essential'],
-  vueTsConfigs.recommended,
-  
+  { files: ['**/*.vue'], languageOptions: { parserOptions: { parser: tseslint.parser } } },
+  { files: ['**/*.json'], plugins: { json }, language: 'json/json', extends: ['json/recommended'] },
   {
-    ...pluginVitest.configs.recommended,
-    files: ['src/**/__tests__/*'],
+    files: ['**/*.jsonc'],
+    plugins: { json },
+    language: 'json/jsonc',
+    extends: ['json/recommended'],
   },
-  skipFormatting,
-)
+  {
+    files: ['**/*.json5'],
+    plugins: { json },
+    language: 'json/json5',
+    extends: ['json/recommended'],
+  },
+  {
+    files: ['**/*.md'],
+    plugins: { markdown },
+    language: 'markdown/gfm',
+    extends: ['markdown/recommended'],
+  },
+  { files: ['**/*.css'], plugins: { css }, language: 'css/css', extends: ['css/recommended'] },
+]);

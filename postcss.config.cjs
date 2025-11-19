@@ -1,13 +1,19 @@
-module.exports = {
+import postcssEachVariables from 'postcss-each-variables';
+import postcssNested from 'postcss-nested';
+import postcssEach from 'postcss-each';
+import postcssFor from 'postcss-for';
+import postcssColorMix from 'postcss-color-mix';
+
+export default {
   plugins: [
-    require('postcss-each-variables'),
-    require('postcss-nested'),
-    require('postcss-each')({
+    postcssEachVariables,
+    postcssNested,
+    postcssEach({
       plugins: {
-        beforeEach: [require('postcss-for'), require('postcss-color-mix')],
+        beforeEach: [postcssFor, postcssColorMix],
       },
     }),
-    require('postcss-for'),
-    require('postcss-color-mix'),
+    postcssFor,
+    postcssColorMix,
   ],
 };
