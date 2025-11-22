@@ -77,6 +77,7 @@
 
 <script setup lang="ts" name="App">
 import { ref, onMounted } from 'vue';
+import { createPopper } from '@popperjs/core';
 import Button from '@/components/Button/Button.vue';
 import type { ButtonInstance } from '@/components/Button/types';
 import Item from '@/components/Collapse/CollapseItem.vue';
@@ -84,8 +85,9 @@ import Collapse from '@/components/Collapse/Collapse.vue';
 import Icon from '@/components/Icon/Icon.vue';
 
 const buttonRef = ref<ButtonInstance | null>(null);
-
 const openedValue = ref(['a']);
+const overlayNode = ref<HTMLElement>();
+const triggerNode = ref<HTMLElement>();
 
 onMounted(() => {
   if (buttonRef.value) {
